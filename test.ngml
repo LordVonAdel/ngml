@@ -1,0 +1,10 @@
+
+
+class persistent Test1 {
+  var bin = 0b10;
+  var hex = 0x1F;
+  var dec = 15;
+  var s1 = "sdf";
+  var s2 = 'asddf';
+
+}

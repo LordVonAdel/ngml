@@ -1,0 +1,140 @@
+//Draft for the project. Created in a Live-Share session.
+
+Checklist:
+ngml => json
++ Classes
++ Attributes
+* Events
+* Constructor
+* Methods
+* Functions
+json => gml
+gml => gmx
+
+a = {
+  type: "class",
+  name: "ObjectA",
+  options: [
+    "invisible",
+    "persistant"
+  ],
+  attributes: [
+    {name: a, value: 0},
+    {name: b, value: "hey"},
+  ],
+  constructor : {
+    parameters: ["klaus", "detlef", "hans"],
+    code: "a = 1; b = 'nein';"
+  },
+  events: {
+    step: "    a++;\n    b = \"k\";"
+  },
+  method: [
+    {
+      name: "doStuff",
+      options: [
+        "inline"
+      ],
+      parameters: [],
+      code: ""
+    }
+  ]  
+}
+
+
+
+
+
+
+
+class invisible persistant ObjectA {
+  var a = 0;
+  var b = "hey";
+
+  ObjectA(klaus, detlef, hans) {
+    a = 1;
+    b = "nein";
+  }
+
+  event step {
+    a++;
+    b = "k";
+  }
+
+  event draw {
+
+  }
+
+  method inline doStuff() {
+
+  }
+
+  function_Object_doStuff
+
+}
+
+a = new A(1, 2, "toast");
+a = new B();
+=>
+global.attributes[| 0] = 1;
+global.attributes[| 1] = 2;
+global.attributes[| 2] = "toast";
+instance_create(A, 0, 0);
+
+a.doStuff();
+doStuff();
+
+class_B_doStuff(a);
+
+class_ObjectA()
+
+class A {
+  var b = 0;
+  var c = 3;
+  addieren() {
+    b += c;
+  }
+}
+
+class_A_addieren();
+
+
+
+// ==>
+
+<object>
+  <spriteName>&lt;undefined&gt;</spriteName>
+  <solid>0</solid>
+  <visible>-1</visible>
+  <depth>10</depth>
+  <persistent>0</persistent>
+  <parentName>&lt;undefined&gt;</parentName>
+  <maskName>&lt;undefined&gt;</maskName>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+      <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+              //hier GML code
+              x = 0;
+            </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
+</object>

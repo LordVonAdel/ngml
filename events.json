@@ -1,0 +1,1410 @@
+{
+  "create": {
+    "type": 0,
+    "number": 0
+  },
+  "destroy": {
+    "type": 1,
+    "number": 0
+  },
+  "alarm11": {
+    "type": 2,
+    "number": 11
+  },
+  "alarm10": {
+    "type": 2,
+    "number": 10
+  },
+  "alarm9": {
+    "type": 2,
+    "number": 9
+  },
+  "alarm8": {
+    "type": 2,
+    "number": 8
+  },
+  "alarm7": {
+    "type": 2,
+    "number": 7
+  },
+  "alarm6": {
+    "type": 2,
+    "number": 6
+  },
+  "alarm5": {
+    "type": 2,
+    "number": 5
+  },
+  "alarm4": {
+    "type": 2,
+    "number": 4
+  },
+  "alarm3": {
+    "type": 2,
+    "number": 3
+  },
+  "alarm2": {
+    "type": 2,
+    "number": 2
+  },
+  "alarm1": {
+    "type": 2,
+    "number": 1
+  },
+  "alarm0": {
+    "type": 2,
+    "number": 0
+  },
+  "stepEnd": {
+    "type": 3,
+    "number": 2
+  },
+  "stepBegin": {
+    "type": 3,
+    "number": 1
+  },
+  "step": {
+    "type": 3,
+    "number": 0
+  },
+  "keyboardF12": {
+    "type": 5,
+    "number": 123
+  },
+  "keyboardF11": {
+    "type": 5,
+    "number": 122
+  },
+  "keyboardF10": {
+    "type": 5,
+    "number": 121
+  },
+  "keyboardF9": {
+    "type": 5,
+    "number": 120
+  },
+  "keyboardF8": {
+    "type": 5,
+    "number": 119
+  },
+  "keyboardF7": {
+    "type": 5,
+    "number": 118
+  },
+  "keyboardF6": {
+    "type": 5,
+    "number": 117
+  },
+  "keyboardF5": {
+    "type": 5,
+    "number": 116
+  },
+  "keyboardF4": {
+    "type": 5,
+    "number": 115
+  },
+  "keyboardF3": {
+    "type": 5,
+    "number": 114
+  },
+  "keyboardF2": {
+    "type": 5,
+    "number": 113
+  },
+  "keyboardF1": {
+    "type": 5,
+    "number": 112
+  },
+  "keyboardKeypadDivide": {
+    "type": 5,
+    "number": 111
+  },
+  "keyboardKeypadDecimal": {
+    "type": 5,
+    "number": 110
+  },
+  "keyboardKeypadMinus": {
+    "type": 5,
+    "number": 109
+  },
+  "keyboardKeypadPlus": {
+    "type": 5,
+    "number": 107
+  },
+  "keyboardKeypadMultiply": {
+    "type": 5,
+    "number": 106
+  },
+  "keyboardKeypad9": {
+    "type": 5,
+    "number": 105
+  },
+  "keyboardKeypad8": {
+    "type": 5,
+    "number": 104
+  },
+  "keyboardKeypad7": {
+    "type": 5,
+    "number": 103
+  },
+  "keyboardKeypad6": {
+    "type": 5,
+    "number": 102
+  },
+  "keyboardKeypad5": {
+    "type": 5,
+    "number": 101
+  },
+  "keyboardKeypad4": {
+    "type": 5,
+    "number": 100
+  },
+  "keyboardKeypad3": {
+    "type": 5,
+    "number": 99
+  },
+  "keyboardKeypad2": {
+    "type": 5,
+    "number": 98
+  },
+  "keyboardKeypad1": {
+    "type": 5,
+    "number": 97
+  },
+  "keyboardKeypad0": {
+    "type": 5,
+    "number": 96
+  },
+  "keyboardLetterZ": {
+    "type": 5,
+    "number": 90
+  },
+  "keyboardLetterY": {
+    "type": 5,
+    "number": 89
+  },
+  "keyboardLetterX": {
+    "type": 5,
+    "number": 88
+  },
+  "keyboardLetterW": {
+    "type": 5,
+    "number": 87
+  },
+  "keyboardLetterV": {
+    "type": 5,
+    "number": 86
+  },
+  "keyboardLetterU": {
+    "type": 5,
+    "number": 85
+  },
+  "keyboardLetterT": {
+    "type": 5,
+    "number": 84
+  },
+  "keyboardLetterS": {
+    "type": 5,
+    "number": 83
+  },
+  "keyboardLetterR": {
+    "type": 5,
+    "number": 82
+  },
+  "keyboardLetterQ": {
+    "type": 5,
+    "number": 81
+  },
+  "keyboardLetterP": {
+    "type": 5,
+    "number": 80
+  },
+  "keyboardLetterO": {
+    "type": 5,
+    "number": 79
+  },
+  "keyboardLetterN": {
+    "type": 5,
+    "number": 78
+  },
+  "keyboardLetterM": {
+    "type": 5,
+    "number": 77
+  },
+  "keyboardLetterL": {
+    "type": 5,
+    "number": 76
+  },
+  "keyboardLetterK": {
+    "type": 5,
+    "number": 75
+  },
+  "keyboardLetterJ": {
+    "type": 5,
+    "number": 74
+  },
+  "keyboardLetterI": {
+    "type": 5,
+    "number": 73
+  },
+  "keyboardLetterH": {
+    "type": 5,
+    "number": 72
+  },
+  "keyboardLetterG": {
+    "type": 5,
+    "number": 71
+  },
+  "keyboardLetterF": {
+    "type": 5,
+    "number": 70
+  },
+  "keyboardLetterE": {
+    "type": 5,
+    "number": 69
+  },
+  "keyboardLetter4": {
+    "type": 5,
+    "number": 68
+  },
+  "keyboardLetterC": {
+    "type": 5,
+    "number": 67
+  },
+  "keyboardLetterB": {
+    "type": 5,
+    "number": 66
+  },
+  "keyboardLetterA": {
+    "type": 5,
+    "number": 65
+  },
+  "keyboardDigit9": {
+    "type": 5,
+    "number": 57
+  },
+  "keyboardDigit8": {
+    "type": 5,
+    "number": 56
+  },
+  "keyboardDigit7": {
+    "type": 5,
+    "number": 55
+  },
+  "keyboardDigit6": {
+    "type": 5,
+    "number": 54
+  },
+  "keyboardDigit5": {
+    "type": 5,
+    "number": 53
+  },
+  "keyboardDigit4": {
+    "type": 5,
+    "number": 52
+  },
+  "keyboardDigit3": {
+    "type": 5,
+    "number": 51
+  },
+  "keyboardDigit2": {
+    "type": 5,
+    "number": 50
+  },
+  "keyboardDigit1": {
+    "type": 5,
+    "number": 49
+  },
+  "keyboardDigit0": {
+    "type": 5,
+    "number": 48
+  },
+  "keyboardDelete": {
+    "type": 5,
+    "number": 46
+  },
+  "keyboardInsert": {
+    "type": 5,
+    "number": 45
+  },
+  "keyboardDown": {
+    "type": 5,
+    "number": 40
+  },
+  "keyboardRight": {
+    "type": 5,
+    "number": 39
+  },
+  "keyboardUp": {
+    "type": 5,
+    "number": 38
+  },
+  "keyboardLeft": {
+    "type": 5,
+    "number": 37
+  },
+  "keyboardHome": {
+    "type": 5,
+    "number": 36
+  },
+  "keyboardEnd": {
+    "type": 5,
+    "number": 35
+  },
+  "keyboardPageDown": {
+    "type": 5,
+    "number": 34
+  },
+  "keyboardPageUp": {
+    "type": 5,
+    "number": 33
+  },
+  "keyboardSpace": {
+    "type": 5,
+    "number": 32
+  },
+  "keyboardEscape": {
+    "type": 5,
+    "number": 27
+  },
+  "keyboardAlt": {
+    "type": 5,
+    "number": 18
+  },
+  "keyboardCtrl": {
+    "type": 5,
+    "number": 17
+  },
+  "keyboardShift": {
+    "type": 5,
+    "number": 16
+  },
+  "keyboardEnter": {
+    "type": 5,
+    "number": 13
+  },
+  "keyboardBackspace": {
+    "type": 5,
+    "number": 8
+  },
+  "keyboardAnyKey": {
+    "type": 5,
+    "number": 1
+  },
+  "keyboardNoKey": {
+    "type": 5,
+    "number": 0
+  },
+  "mouseWheelDown": {
+    "type": 6,
+    "number": 61
+  },
+  "mouseWheelUp": {
+    "type": 6,
+    "number": 60
+  },
+  "mouseGlobalMiddleReleased": {
+    "type": 6,
+    "number": 58
+  },
+  "mouseGlobalRightReleased": {
+    "type": 6,
+    "number": 57
+  },
+  "mouseGlobalLeftReleased": {
+    "type": 6,
+    "number": 56
+  },
+  "mouseGlobalMiddlePressed": {
+    "type": 6,
+    "number": 55
+  },
+  "mouseGlobalRightPressed": {
+    "type": 6,
+    "number": 54
+  },
+  "mouseGlobalLeftPressed": {
+    "type": 6,
+    "number": 53
+  },
+  "mouseGlobalMiddle": {
+    "type": 6,
+    "number": 52
+  },
+  "mouseGlobalRight": {
+    "type": 6,
+    "number": 51
+  },
+  "mouseGlobalLeft": {
+    "type": 6,
+    "number": 50
+  },
+  "mouseLeave": {
+    "type": 6,
+    "number": 11
+  },
+  "mouseEnter": {
+    "type": 6,
+    "number": 10
+  },
+  "mouseMiddleReleased": {
+    "type": 6,
+    "number": 9
+  },
+  "mouseRightReleased": {
+    "type": 6,
+    "number": 8
+  },
+  "mouseLeftReleased": {
+    "type": 6,
+    "number": 7
+  },
+  "mouseMiddlePressed": {
+    "type": 6,
+    "number": 6
+  },
+  "mouseRightPressed": {
+    "type": 6,
+    "number": 5
+  },
+  "mouseLeftPressed": {
+    "type": 6,
+    "number": 4
+  },
+  "mouseNoButton": {
+    "type": 6,
+    "number": 3
+  },
+  "mouseMiddle": {
+    "type": 6,
+    "number": 2
+  },
+  "mouseRight": {
+    "type": 6,
+    "number": 1
+  },
+  "mouseLeft": {
+    "type": 6,
+    "number": 0
+  },
+  "asyncSystem": {
+    "type": 7,
+    "number": 75
+  },
+  "asyncAudioPlayback": {
+    "type": 7,
+    "number": 74
+  },
+  "asyncAudioRecording": {
+    "type": 7,
+    "number": 73
+  },
+  "asyncSaveLoad": {
+    "type": 7,
+    "number": 72
+  },
+  "asyncPushNotification": {
+    "type": 7,
+    "number": 71
+  },
+  "asyncSocial": {
+    "type": 7,
+    "number": 70
+  },
+  "asyncSteam": {
+    "type": 7,
+    "number": 69
+  },
+  "asyncNetworking": {
+    "type": 7,
+    "number": 68
+  },
+  "asyncCloud": {
+    "type": 7,
+    "number": 67
+  },
+  "asyncIap": {
+    "type": 7,
+    "number": 66
+  },
+  "asyncDialog": {
+    "type": 7,
+    "number": 63
+  },
+  "asyncHttp": {
+    "type": 7,
+    "number": 62
+  },
+  "asyncImageLoaded": {
+    "type": 7,
+    "number": 60
+  },
+  "animationEvent": {
+    "type": 7,
+    "number": 59
+  },
+  "animationUpdate": {
+    "type": 7,
+    "number": 58
+  },
+  "boundaryView7": {
+    "type": 7,
+    "number": 57
+  },
+  "boundaryView6": {
+    "type": 7,
+    "number": 56
+  },
+  "boundaryView5": {
+    "type": 7,
+    "number": 55
+  },
+  "boundaryView4": {
+    "type": 7,
+    "number": 54
+  },
+  "boundaryView3": {
+    "type": 7,
+    "number": 53
+  },
+  "boundaryView2": {
+    "type": 7,
+    "number": 52
+  },
+  "boundaryView1": {
+    "type": 7,
+    "number": 51
+  },
+  "boundaryView0": {
+    "type": 7,
+    "number": 50
+  },
+  "outsideView7": {
+    "type": 7,
+    "number": 47
+  },
+  "outsideView6": {
+    "type": 7,
+    "number": 46
+  },
+  "outsideView5": {
+    "type": 7,
+    "number": 45
+  },
+  "outsideView4": {
+    "type": 7,
+    "number": 44
+  },
+  "outsideView3": {
+    "type": 7,
+    "number": 43
+  },
+  "outsideView2": {
+    "type": 7,
+    "number": 42
+  },
+  "outsideView1": {
+    "type": 7,
+    "number": 41
+  },
+  "outsideView0": {
+    "type": 7,
+    "number": 40
+  },
+  "user15": {
+    "type": 7,
+    "number": 25
+  },
+  "user14": {
+    "type": 7,
+    "number": 24
+  },
+  "user13": {
+    "type": 7,
+    "number": 23
+  },
+  "user12": {
+    "type": 7,
+    "number": 22
+  },
+  "user11": {
+    "type": 7,
+    "number": 21
+  },
+  "user10": {
+    "type": 7,
+    "number": 20
+  },
+  "user9": {
+    "type": 7,
+    "number": 19
+  },
+  "user8": {
+    "type": 7,
+    "number": 18
+  },
+  "user7": {
+    "type": 7,
+    "number": 17
+  },
+  "user6": {
+    "type": 7,
+    "number": 16
+  },
+  "user5": {
+    "type": 7,
+    "number": 15
+  },
+  "user4": {
+    "type": 7,
+    "number": 14
+  },
+  "user3": {
+    "type": 7,
+    "number": 13
+  },
+  "user2": {
+    "type": 7,
+    "number": 12
+  },
+  "user1": {
+    "type": 7,
+    "number": 11
+  },
+  "user0": {
+    "type": 7,
+    "number": 10
+  },
+  "noMoreHealth": {
+    "type": 7,
+    "number": 9
+  },
+  "endOfPath": {
+    "type": 7,
+    "number": 8
+  },
+  "animationEnd": {
+    "type": 7,
+    "number": 7
+  },
+  "noMoreLives": {
+    "type": 7,
+    "number": 6
+  },
+  "roomEnd": {
+    "type": 7,
+    "number": 5
+  },
+  "roomStart": {
+    "type": 7,
+    "number": 4
+  },
+  "gameEnd": {
+    "type": 7,
+    "number": 3
+  },
+  "gameStart": {
+    "type": 7,
+    "number": 2
+  },
+  "intersectBoundary": {
+    "type": 7,
+    "number": 1
+  },
+  "outsideRoom": {
+    "type": 7,
+    "number": 0
+  },
+  "drawPost": {
+    "type": 8,
+    "number": 77
+  },
+  "drawPre": {
+    "type": 8,
+    "number": 76
+  },
+  "drawGUIEnd": {
+    "type": 8,
+    "number": 75
+  },
+  "drawGUIBegin": {
+    "type": 8,
+    "number": 74
+  },
+  "drawEnd": {
+    "type": 8,
+    "number": 73
+  },
+  "drawBegin": {
+    "type": 8,
+    "number": 72
+  },
+  "drawResize": {
+    "type": 8,
+    "number": 65
+  },
+  "drawGUI": {
+    "type": 8,
+    "number": 64
+  },
+  "draw": {
+    "type": 8,
+    "number": 0
+  },
+  "keyboardPressF12": {
+    "type": 9,
+    "number": 123
+  },
+  "keyboardPressF11": {
+    "type": 9,
+    "number": 122
+  },
+  "keyboardPressF10": {
+    "type": 9,
+    "number": 121
+  },
+  "keyboardPressF9": {
+    "type": 9,
+    "number": 120
+  },
+  "keyboardPressF8": {
+    "type": 9,
+    "number": 119
+  },
+  "keyboardPressF7": {
+    "type": 9,
+    "number": 118
+  },
+  "keyboardPressF6": {
+    "type": 9,
+    "number": 117
+  },
+  "keyboardPressF5": {
+    "type": 9,
+    "number": 116
+  },
+  "keyboardPressF4": {
+    "type": 9,
+    "number": 115
+  },
+  "keyboardPressF3": {
+    "type": 9,
+    "number": 114
+  },
+  "keyboardPressF2": {
+    "type": 9,
+    "number": 113
+  },
+  "keyboardPressF1": {
+    "type": 9,
+    "number": 112
+  },
+  "keyboardPressKeypadDivide": {
+    "type": 9,
+    "number": 111
+  },
+  "keyboardPressKeypadDecimal": {
+    "type": 9,
+    "number": 110
+  },
+  "keyboardPressKeypadMinus": {
+    "type": 9,
+    "number": 109
+  },
+  "keyboardPressKeypadPlus": {
+    "type": 9,
+    "number": 107
+  },
+  "keyboardPressKeypadMultiply": {
+    "type": 9,
+    "number": 106
+  },
+  "keyboardPressKeypad9": {
+    "type": 9,
+    "number": 105
+  },
+  "keyboardPressKeypad8": {
+    "type": 9,
+    "number": 104
+  },
+  "keyboardPressKeypad7": {
+    "type": 9,
+    "number": 103
+  },
+  "keyboardPressKeypad6": {
+    "type": 9,
+    "number": 102
+  },
+  "keyboardPressKeypad5": {
+    "type": 9,
+    "number": 101
+  },
+  "keyboardPressKeypad4": {
+    "type": 9,
+    "number": 100
+  },
+  "keyboardPressKeypad3": {
+    "type": 9,
+    "number": 99
+  },
+  "keyboardPressKeypad2": {
+    "type": 9,
+    "number": 98
+  },
+  "keyboardPressKeypad1": {
+    "type": 9,
+    "number": 97
+  },
+  "keyboardPressKeypad0": {
+    "type": 9,
+    "number": 96
+  },
+  "keyboardPressLetterZ": {
+    "type": 9,
+    "number": 90
+  },
+  "keyboardPressLetterY": {
+    "type": 9,
+    "number": 89
+  },
+  "keyboardPressLetterX": {
+    "type": 9,
+    "number": 88
+  },
+  "keyboardPressLetterW": {
+    "type": 9,
+    "number": 87
+  },
+  "keyboardPressLetterV": {
+    "type": 9,
+    "number": 86
+  },
+  "keyboardPressLetterU": {
+    "type": 9,
+    "number": 89
+  },
+  "keyboardPressLetterT": {
+    "type": 9,
+    "number": 84
+  },
+  "keyboardPressLetterS": {
+    "type": 9,
+    "number": 83
+  },
+  "keyboardPressLetterR": {
+    "type": 9,
+    "number": 82
+  },
+  "keyboardPressLetterQ": {
+    "type": 9,
+    "number": 81
+  },
+  "keyboardPressLetterP": {
+    "type": 9,
+    "number": 80
+  },
+  "keyboardPressLetterO": {
+    "type": 9,
+    "number": 79
+  },
+  "keyboardPressLetterN": {
+    "type": 9,
+    "number": 78
+  },
+  "keyboardPressLetterM": {
+    "type": 9,
+    "number": 77
+  },
+  "keyboardPressLetterL": {
+    "type": 9,
+    "number": 76
+  },
+  "keyboardPressLetterK": {
+    "type": 9,
+    "number": 75
+  },
+  "keyboardPressLetterJ": {
+    "type": 9,
+    "number": 74
+  },
+  "keyboardPressLetterI": {
+    "type": 9,
+    "number": 73
+  },
+  "keyboardPressLetterH": {
+    "type": 9,
+    "number": 72
+  },
+  "keyboardPressLetterG": {
+    "type": 9,
+    "number": 71
+  },
+  "keyboardPressLetterF": {
+    "type": 9,
+    "number": 70
+  },
+  "keyboardPressLetterE": {
+    "type": 9,
+    "number": 69
+  },
+  "keyboardPressLetter4": {
+    "type": 9,
+    "number": 68
+  },
+  "keyboardPressLetterC": {
+    "type": 9,
+    "number": 67
+  },
+  "keyboardPressLetterB": {
+    "type": 9,
+    "number": 66
+  },
+  "keyboardPressLetterA": {
+    "type": 9,
+    "number": 65
+  },
+  "keyboardPressDigit9": {
+    "type": 9,
+    "number": 57
+  },
+  "keyboardPressDigit8": {
+    "type": 9,
+    "number": 56
+  },
+  "keyboardPressDigit7": {
+    "type": 9,
+    "number": 55
+  },
+  "keyboardPressDigit6": {
+    "type": 9,
+    "number": 54
+  },
+  "keyboardPressDigit5": {
+    "type": 9,
+    "number": 53
+  },
+  "keyboardPressDigit4": {
+    "type": 9,
+    "number": 52
+  },
+  "keyboardPressDigit3": {
+    "type": 9,
+    "number": 51
+  },
+  "keyboardPressDigit2": {
+    "type": 9,
+    "number": 50
+  },
+  "keyboardPressDigit1": {
+    "type": 9,
+    "number": 49
+  },
+  "keyboardPressDigit0": {
+    "type": 9,
+    "number": 48
+  },
+  "keyboardPressDelete": {
+    "type": 9,
+    "number": 46
+  },
+  "keyboardPressInsert": {
+    "type": 9,
+    "number": 45
+  },
+  "keyboardPressDown": {
+    "type": 9,
+    "number": 40
+  },
+  "keyboardPressRight": {
+    "type": 9,
+    "number": 39
+  },
+  "keyboardPressUp": {
+    "type": 9,
+    "number": 38
+  },
+  "keyboardPressLeft": {
+    "type": 9,
+    "number": 37
+  },
+  "keyboardPressHome": {
+    "type": 9,
+    "number": 36
+  },
+  "keyboardPressEnd": {
+    "type": 9,
+    "number": 35
+  },
+  "keyboardPressPageDown": {
+    "type": 9,
+    "number": 34
+  },
+  "keyboardPressPageUp": {
+    "type": 9,
+    "number": 33
+  },
+  "keyboardPressSpace": {
+    "type": 9,
+    "number": 32
+  },
+  "keyboardPressEscape": {
+    "type": 9,
+    "number": 27
+  },
+  "keyboardPressAlt": {
+    "type": 9,
+    "number": 18
+  },
+  "keyboardPressCtrl": {
+    "type": 9,
+    "number": 17
+  },
+  "keyboardPressShift": {
+    "type": 9,
+    "number": 16
+  },
+  "keyboardPressEnter": {
+    "type": 9,
+    "number": 13
+  },
+  "keyboardPressBackspace": {
+    "type": 9,
+    "number": 8
+  },
+  "keyboardPressAnyKey": {
+    "type": 9,
+    "number": 1
+  },
+  "keyboardPressNoKey": {
+    "type": 9,
+    "number": 0
+  },
+  "keyboardReleaseF12": {
+    "type": 10,
+    "number": 123
+  },
+  "keyboardReleaseF11": {
+    "type": 10,
+    "number": 122
+  },
+  "keyboardReleaseF10": {
+    "type": 10,
+    "number": 121
+  },
+  "keyboardReleaseF9": {
+    "type": 10,
+    "number": 120
+  },
+  "keyboardReleaseF8": {
+    "type": 10,
+    "number": 119
+  },
+  "keyboardReleaseF7": {
+    "type": 10,
+    "number": 118
+  },
+  "keyboardReleaseF6": {
+    "type": 10,
+    "number": 117
+  },
+  "keyboardReleaseF5": {
+    "type": 10,
+    "number": 116
+  },
+  "keyboardReleaseF4": {
+    "type": 10,
+    "number": 115
+  },
+  "keyboardReleaseF3": {
+    "type": 10,
+    "number": 114
+  },
+  "keyboardReleaseF2": {
+    "type": 10,
+    "number": 113
+  },
+  "keyboardReleaseF1": {
+    "type": 10,
+    "number": 112
+  },
+  "keyboardReleaseKeypadDivide": {
+    "type": 10,
+    "number": 111
+  },
+  "keyboardReleaseKeypadDecimal": {
+    "type": 10,
+    "number": 110
+  },
+  "keyboardReleaseKeypadMinus": {
+    "type": 10,
+    "number": 109
+  },
+  "keyboardReleaseKeypadPlus": {
+    "type": 10,
+    "number": 107
+  },
+  "keyboardReleaseKeypadMultiply": {
+    "type": 10,
+    "number": 106
+  },
+  "keyboardReleaseKeypad9": {
+    "type": 10,
+    "number": 105
+  },
+  "keyboardReleaseKeypad8": {
+    "type": 10,
+    "number": 104
+  },
+  "keyboardReleaseKeypad7": {
+    "type": 10,
+    "number": 103
+  },
+  "keyboardReleaseKeypad6": {
+    "type": 10,
+    "number": 102
+  },
+  "keyboardReleaseKeypad5": {
+    "type": 10,
+    "number": 101
+  },
+  "keyboardReleaseKeypad4": {
+    "type": 10,
+    "number": 100
+  },
+  "keyboardReleaseKeypad3": {
+    "type": 10,
+    "number": 99
+  },
+  "keyboardReleaseKeypad2": {
+    "type": 10,
+    "number": 98
+  },
+  "keyboardReleaseKeypad1": {
+    "type": 10,
+    "number": 97
+  },
+  "keyboardReleaseKeypad0": {
+    "type": 10,
+    "number": 96
+  },
+  "keyboardReleaseLetterZ": {
+    "type": 10,
+    "number": 90
+  },
+  "keyboardReleaseLetterY": {
+    "type": 10,
+    "number": 89
+  },
+  "keyboardReleaseLetterX": {
+    "type": 10,
+    "number": 88
+  },
+  "keyboardReleaseLetterW": {
+    "type": 10,
+    "number": 87
+  },
+  "keyboardReleaseLetterV": {
+    "type": 10,
+    "number": 86
+  },
+  "keyboardReleaseLetterU": {
+    "type": 10,
+    "number": 89
+  },
+  "keyboardReleaseLetterT": {
+    "type": 10,
+    "number": 84
+  },
+  "keyboardReleaseLetterS": {
+    "type": 10,
+    "number": 83
+  },
+  "keyboardReleaseLetterR": {
+    "type": 10,
+    "number": 82
+  },
+  "keyboardReleaseLetterQ": {
+    "type": 10,
+    "number": 81
+  },
+  "keyboardReleaseLetterP": {
+    "type": 10,
+    "number": 80
+  },
+  "keyboardReleaseLetterO": {
+    "type": 10,
+    "number": 79
+  },
+  "keyboardReleaseLetterN": {
+    "type": 10,
+    "number": 78
+  },
+  "keyboardReleaseLetterM": {
+    "type": 10,
+    "number": 77
+  },
+  "keyboardReleaseLetterL": {
+    "type": 10,
+    "number": 76
+  },
+  "keyboardReleaseLetterK": {
+    "type": 10,
+    "number": 75
+  },
+  "keyboardReleaseLetterJ": {
+    "type": 10,
+    "number": 74
+  },
+  "keyboardReleaseLetterI": {
+    "type": 10,
+    "number": 73
+  },
+  "keyboardReleaseLetterH": {
+    "type": 10,
+    "number": 72
+  },
+  "keyboardReleaseLetterG": {
+    "type": 10,
+    "number": 71
+  },
+  "keyboardReleaseLetterF": {
+    "type": 10,
+    "number": 70
+  },
+  "keyboardReleaseLetterE": {
+    "type": 10,
+    "number": 69
+  },
+  "keyboardReleaseLetter4": {
+    "type": 10,
+    "number": 68
+  },
+  "keyboardReleaseLetterC": {
+    "type": 10,
+    "number": 67
+  },
+  "keyboardReleaseLetterB": {
+    "type": 10,
+    "number": 66
+  },
+  "keyboardReleaseLetterA": {
+    "type": 10,
+    "number": 65
+  },
+  "keyboardReleaseDigit9": {
+    "type": 10,
+    "number": 57
+  },
+  "keyboardReleaseDigit8": {
+    "type": 10,
+    "number": 56
+  },
+  "keyboardReleaseDigit7": {
+    "type": 10,
+    "number": 55
+  },
+  "keyboardReleaseDigit6": {
+    "type": 10,
+    "number": 54
+  },
+  "keyboardReleaseDigit5": {
+    "type": 10,
+    "number": 53
+  },
+  "keyboardReleaseDigit4": {
+    "type": 10,
+    "number": 52
+  },
+  "keyboardReleaseDigit3": {
+    "type": 10,
+    "number": 51
+  },
+  "keyboardReleaseDigit2": {
+    "type": 10,
+    "number": 50
+  },
+  "keyboardReleaseDigit1": {
+    "type": 10,
+    "number": 49
+  },
+  "keyboardReleaseDigit0": {
+    "type": 10,
+    "number": 48
+  },
+  "keyboardReleaseDelete": {
+    "type": 10,
+    "number": 46
+  },
+  "keyboardReleaseInsert": {
+    "type": 10,
+    "number": 45
+  },
+  "keyboardReleaseDown": {
+    "type": 10,
+    "number": 40
+  },
+  "keyboardReleaseRight": {
+    "type": 10,
+    "number": 39
+  },
+  "keyboardReleaseUp": {
+    "type": 10,
+    "number": 38
+  },
+  "keyboardReleaseLeft": {
+    "type": 10,
+    "number": 37
+  },
+  "keyboardReleaseHome": {
+    "type": 10,
+    "number": 36
+  },
+  "keyboardReleaseEnd": {
+    "type": 10,
+    "number": 35
+  },
+  "keyboardReleasePageDown": {
+    "type": 10,
+    "number": 34
+  },
+  "keyboardReleasePageUp": {
+    "type": 10,
+    "number": 33
+  },
+  "keyboardReleaseSpace": {
+    "type": 10,
+    "number": 32
+  },
+  "keyboardReleaseEscape": {
+    "type": 10,
+    "number": 27
+  },
+  "keyboardReleaseAlt": {
+    "type": 10,
+    "number": 18
+  },
+  "keyboardReleaseCtrl": {
+    "type": 10,
+    "number": 17
+  },
+  "keyboardReleaseShift": {
+    "type": 10,
+    "number": 16
+  },
+  "keyboardReleaseEnter": {
+    "type": 10,
+    "number": 13
+  },
+  "keyboardReleaseBackspace": {
+    "type": 10,
+    "number": 8
+  },
+  "keyboardReleaseAnyKey": {
+    "type": 10,
+    "number": 1
+  },
+  "keyboardReleaseNoKey": {
+    "type": 10,
+    "number": 0
+  }
+}
