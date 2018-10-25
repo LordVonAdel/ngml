@@ -11,6 +11,7 @@ const ignoreChars = " \n\t\r";
 const operators = ":+-*{}()[],./\\;=#?|<>^$";
 const allowedNameStart = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 const allowedCharsInName = allowedNameStart + numberChars;
+const events = require("./events.json");
 
 const allowedCharsInSymbol = allowedNameStart + ignoreChars + operators + numberChars + "\"'";
 
@@ -63,7 +64,7 @@ function megaSuperDuperMasterSplit(text) {
 
     if (ignoreChars.includes(char)) {
       if(char == "\n") {
-        line++;        
+        line++;
       }
       lines.push(line);            
       output.push(word);      
@@ -80,6 +81,7 @@ function megaSuperDuperMasterSplit(text) {
           char = text.charAt(index);
           index++;
           if(char == "\n") {
+            line++;
             break;
           }
         }
@@ -88,6 +90,9 @@ function megaSuperDuperMasterSplit(text) {
           charlast = char;
           char = text.charAt(index);
           index++;
+          if(char == "\n") {
+            line++;
+          }
           if(charlast == "*" && char == "/") {
             break;
           }
@@ -201,7 +206,7 @@ class Ngml2json {
     console.log("----")
   }
 
-  scopeTop() {
+  scopeFile() {
 
     var output = [];
 
@@ -212,7 +217,11 @@ class Ngml2json {
       if (symbol == "class") {
         output.push(this.scopeClass());
       } else if (symbol == "function") {
+        output.push(this.scopeFunction());
+      } else if (symbol == "main") {
 
+      } else if (symbol == "global") {
+        output.push(this.scopeGlobal());
       } else {
         throw new NGMLError(`Unexpected Symbol "${symbol}"`, this.file, this.lines[this.index - 1]);
       }
@@ -221,12 +230,27 @@ class Ngml2json {
     return output;
   }
 
+  scopeGlobal() {
+    var name = this.symbols[this.index];
+    this.index++;
+    var semicolon = this.symbols[this.index];
+    this.index++;
+    if (semicolon != ";") {
+      throw new NGMLError(`Missing ';' after global declaration.`);
+    }
+    return {
+      type: "global",
+      name: name
+    }
+  }
+
   scopeClass() {
     var symbol;
     var options = [];
     var methods = [];
     var events = [];
     var attributes = [];
+    var constructors = [];
     var name = "";
     var parent = "";
     symbol = this.symbols[this.index];
@@ -236,6 +260,10 @@ class Ngml2json {
       options.push(symbol);
       symbol = this.symbols[this.index];
       this.index++;
+
+      if (!symbol) {
+        throw new NGMLError("Unexpected end of file", this.file, this.lines[this.index - 1]);
+      }
     }
 
     if (options.includes(":")) {
@@ -261,25 +289,35 @@ class Ngml2json {
     this.index ++;
     while (symbol != "}") {
       if (symbol == "var") {
-        attributes.push(this.scopeAttribute());
+        var attribute = this.scopeAttribute();
+        attributes.push(attribute);
       } else if (symbol == "method") {
-
+        var method = this.scopeMethod();
+        methods.push(method);
       } else if (symbol == "event") {
-        events.push(this.scopeEvent());
+        var event = this.scopeEvent();
+        events.push(event);
       } else if (symbol == name) {
-
+        var constructor = this.scopeConstructor();
+        constructors.push(constructor);
       } else {
         throw new NGMLError("Unkown Class Element " + symbol, this.file, this.lines[i]);
       }
 
       symbol = this.symbols[this.index];
       this.index++;
+
+      if (!symbol) {
+        throw new NGMLError("Unexpected end of class", this.file, this.lines[this.index - 2]);
+      }
     }
 
     return {
+      type: "class",
       name: name,
       parent: parent,
       attributes: attributes,
+      constructors: constructors,
       events: events,
       methods: methods,
       options: options
@@ -328,8 +366,332 @@ class Ngml2json {
     var symbol = this.symbols[this.index];
     this.index++;
     var name = symbol;
+    var event = events[name];
+    if (!event) {
+      throw new NGMLError(`Unkown event type: ${name}`, this.file, this.lines[this.index - 1]);
+    }
+
+    var symbol = this.symbols[this.index];
+    this.index++;
+    if (symbol != "{") {
+      throw new NGMLError(`Malformed event declaration`, this.file, this.lines[this.index - 1]);
+    }
+    var numBrackets = 1; //include first bracket from head
+    var code = [];
+    var codeline = [];
+
+    while(numBrackets > 0) {
+      symbol = this.symbols[this.index];
+      this.index++;
+
+      if(symbol == "{") {
+        numBrackets++;
+      } else if(symbol == "}") {
+        numBrackets--;
+      } else if (!symbol) {
+        throw new NGMLError("Unexpected end of event", this.file, this.lines[this.index - 2]);
+      }
+      code.push(symbol);
+      codeline.push(this.lines[this.index - 1]);
+    }
+
+    code.pop(); //remove last bracket
+    codeline.pop();
+                
+    return {
+      type: "event",
+      name: name,
+      eventNumber: event.number,
+      eventType: event.type,
+      code: code,
+      codeline: codeline
+    }
   }
 
+  scopeMethod() {
+    var symbol = this.symbols[this.index];
+    this.index++;
+    var name = symbol;
+    
+    if (!name) {
+      throw new NGMLError("Malformed method head", this.file, this.lines[this.index - 2]);
+    }
+    if (!allowedNameStart.includes(name[0])) {
+      throw new NGMLError(`Invalid method name "${argument}"`, this.file, this.lines[this.index - 1]);
+    }
+    
+    symbol = this.symbols[this.index];
+    this.index++;
+    if (symbol != "(") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of method`, this.file, this.lines[this.index - 2]);
+      } else {
+        throw new NGMLError(`Malformed method declaration`, this.file, this.lines[this.index - 1]);
+      }
+    }
+
+    var args = [];
+    symbol = this.symbols[this.index];
+    this.index++;
+    if(symbol != ")") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of method head`, this.file, this.lines[this.index - 2]);
+      } else {
+        while(true) {
+          var argument = symbol;
+          if (!argument) {
+            throw new NGMLError("Unexpected end of method head", this.file, this.lines[this.index - 2]);
+          }
+          if (!allowedNameStart.includes(argument[0])) {
+            throw new NGMLError(`Invalid argument name "${argument}"`, this.file, this.lines[this.index - 1]);
+          }
+          args.push(argument);
+
+          symbol = this.symbols[this.index];
+          this.index++;
+
+          if(symbol == ",") {
+            symbol = this.symbols[this.index];
+            this.index++;
+          } else if (symbol == ")") {
+            break;
+          } else {
+            if(!symbol) {
+              throw new NGMLError("Unexpected end of method head", this.file, this.lines[this.index - 2]);
+            }
+            throw new NGMLError("Malformed method head", this.file, this.lines[this.index - 1]);        
+          }          
+        }
+      }
+    }
+    symbol = this.symbols[this.index];
+    this.index++;
+
+    if (symbol != "{") {
+      throw new NGMLError("Malformed method head", this.file, this.lines[this.index - 2]);
+    }
+
+    //check for duplicates in arguments
+    if (args.length != args.filter((v, i) => args.indexOf(v) === i).length) {
+      throw new NGMLError("Duplicated argument names in method", this.file, this.lines[this.index - 1]);
+    }
+
+    var numBrackets = 1; //include first bracket from head
+    var code = [];
+    var codeline = [];
+
+    while(numBrackets > 0) {
+      symbol = this.symbols[this.index];
+      this.index++;
+
+      if(symbol == "{") {
+        numBrackets++;
+      } else if(symbol == "}") {
+        numBrackets--;
+      } else if (!symbol) {
+        throw new NGMLError("Unexpected end of method body", this.file, this.lines[this.index - 2]);
+      }
+      code.push(symbol);
+      codeline.push(this.lines[this.index - 1]);  
+    }
+
+    code.pop(); //remove last bracket
+    codeline.pop();
+
+    return {
+      type: "method",
+      name: name,
+      code: code,
+      codeline: codeline,
+      arguments: args
+    }
+  }
+
+  scopeFunction() {
+    var symbol = this.symbols[this.index];
+    this.index++;
+    var name = symbol;
+    
+    if (!name) {
+      throw new NGMLError("Malformed function head", this.file, this.lines[this.index - 2]);
+    }
+    if (!allowedNameStart.includes(name[0])) {
+      throw new NGMLError(`Invalid function name "${argument}"`, this.file, this.lines[this.index - 1]);
+    }
+    
+    symbol = this.symbols[this.index];
+    this.index++;
+    if (symbol != "(") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of function`, this.file, this.lines[this.index - 2]);
+      } else {
+        throw new NGMLError(`Malformed function declaration`, this.file, this.lines[this.index - 1]);
+      }
+    }
+
+    var args = [];
+    symbol = this.symbols[this.index];
+    this.index++;
+    if(symbol != ")") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of function head`, this.file, this.lines[this.index - 2]);
+      } else {
+        while(true) {
+          var argument = symbol;
+          if (!argument) {
+            throw new NGMLError("Unexpected end of function head", this.file, this.lines[this.index - 2]);
+          }
+          if (!allowedNameStart.includes(argument[0])) {
+            throw new NGMLError(`Invalid argument name "${argument}"`, this.file, this.lines[this.index - 1]);
+          }
+          args.push(argument);
+
+          symbol = this.symbols[this.index];
+          this.index++;
+
+          if(symbol == ",") {
+            symbol = this.symbols[this.index];
+            this.index++;
+          } else if (symbol == ")") {
+            break;
+          } else {
+            if(!symbol) {
+              throw new NGMLError("Unexpected end of function head", this.file, this.lines[this.index - 2]);
+            }
+            throw new NGMLError("Malformed function head", this.file, this.lines[this.index - 1]);        
+          }          
+        }
+      }
+    }
+    symbol = this.symbols[this.index];
+    this.index++;
+
+    if (symbol != "{") {
+      throw new NGMLError("Malformed function head", this.file, this.lines[this.index - 2]);
+    }
+
+    //check for duplicates in arguments
+    if (args.length != args.filter((v, i) => args.indexOf(v) === i).length) {
+      throw new NGMLError("Duplicated argument names in function", this.file, this.lines[this.index - 1]);
+    }
+
+    var numBrackets = 1; //include first bracket from head
+    var code = [];
+    var codeline = [];
+
+    while(numBrackets > 0) {
+      symbol = this.symbols[this.index];
+      this.index++;
+
+      if(symbol == "{") {
+        numBrackets++;
+      } else if(symbol == "}") {
+        numBrackets--;
+      } else if (!symbol) {
+        throw new NGMLError("Unexpected end of function body", this.file, this.lines[this.index - 2]);
+      }
+      code.push(symbol);    
+      codeline.push(this.lines[this.index - 1]);
+    }
+
+    code.pop(); //remove last bracket
+    codeline.pop();
+
+    return {
+      type: "function",
+      name: name,
+      code: code,
+      codeline: codeline,
+      arguments: args
+    }
+  }
+
+  scopeConstructor() {
+    var symbol = this.symbols[this.index];
+    this.index++;
+    if (symbol != "(") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of constructor`, this.file, this.lines[this.index - 2]);
+      } else {
+        throw new NGMLError(`Malformed constructor declaration`, this.file, this.lines[this.index - 1]);
+      }
+    }
+
+    var args = [];
+    symbol = this.symbols[this.index];
+    this.index++;
+    if(symbol != ")") {
+      if (!symbol) {
+        throw new NGMLError(`Unexpected end of constructor head`, this.file, this.lines[this.index - 2]);
+      } else {
+        while(true) {
+          var argument = symbol;
+          if (!argument) {
+            throw new NGMLError("Unexpected end of constructor head", this.file, this.lines[this.index - 2]);
+          }
+          if (!allowedNameStart.includes(argument[0])) {
+            throw new NGMLError(`Invalid argument name "${argument}"`, this.file, this.lines[this.index - 1]);
+          }
+          args.push(argument);
+
+          symbol = this.symbols[this.index];
+          this.index++;
+
+          if(symbol == ",") {
+            symbol = this.symbols[this.index];
+            this.index++;
+          } else if (symbol == ")") {
+            break;
+          } else {
+            if(!symbol) {
+              throw new NGMLError("Unexpected end of constructor head", this.file, this.lines[this.index - 2]);
+            }
+            throw new NGMLError("Malformed constructor head", this.file, this.lines[this.index - 1]);        
+          }          
+        }
+      }
+    }
+    symbol = this.symbols[this.index];
+    this.index++;
+
+    if (symbol != "{") {
+      throw new NGMLError("Malformed constructor head", this.file, this.lines[this.index - 2]);
+    }
+
+    //check for duplicates in arguments
+    if (args.length != args.filter((v, i) => args.indexOf(v) === i).length) {
+      throw new NGMLError("Duplicated argument names in constructor", this.file, this.lines[this.index - 1]);
+    }
+
+    var numBrackets = 1; //include first bracket from head
+    var code = [];
+    var codeline = [];
+
+    while(numBrackets > 0) {
+      symbol = this.symbols[this.index];
+      this.index++;
+
+      if(symbol == "{") {
+        numBrackets++;
+      } else if(symbol == "}") {
+        numBrackets--;
+      } else if (!symbol) {
+        throw new NGMLError("Unexpected end of constructor body", this.file, this.lines[this.index - 2]);
+      }
+      code.push(symbol);
+      codeline.push(this.lines[this.index - 1]);
+    }
+
+    code.pop(); //remove last bracket
+    codeline.pop();
+
+    return {
+      type: "constructor",
+      code: code,
+      codeline: codeline,
+      arguments: args
+    }
+  }
 }
 
 

@@ -4,10 +4,11 @@ Checklist:
 ngml => json
 + Classes
 + Attributes
-* Events
-* Constructor
-* Methods
-* Functions
++ Events
++ Constructor
++ Methods
+* Globals ???? 
++ Functions
 json => gml
 gml => gmx
 
@@ -42,14 +43,21 @@ a = {
 }
 
 
+  gloabl x
 
+main() {
+  global.x = 3;
+}
 
-
-
+function main() {
+  
+}
 
 class invisible persistant ObjectA {
   var a = 0;
   var b = "hey";
+
+  global
 
   ObjectA(klaus, detlef, hans) {
     a = 1;
