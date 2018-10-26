@@ -13,4 +13,16 @@ class NGMLError extends Error {
 
 }
 
-module.exports = NGMLError;
+class ProjectError extends Error {
+  constructor(message) {
+    super(message);
+    this.msg = message;
+  }
+
+  toString() {
+    return "Project Error: " + this.msg;
+  }
+}
+
+module.exports.NGMLError = NGMLError;
+module.exports.ProjectError = ProjectError;

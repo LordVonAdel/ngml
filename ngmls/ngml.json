@@ -1,0 +1,38 @@
+{
+  "rooms": {
+    "rm_game": {
+      "speed" : 60,
+      "width" : 1280,
+      "height" : 720,
+      "persistent" : false,
+      "color" : "0xFF0000",
+      "showcolor" : false,
+      "code": "",
+      "enableViews" : true,
+      "clearViewBackground" : true,
+      "clearDisplayBuffer" : true,
+      "backgrounds": [
+        {
+          "visible": false,
+          "foreground": false,
+          "name":"",
+          "x":0,
+          "y": 0,
+          "htiled":true,
+          "vtiled":true,
+          "hspeed":0,
+          "vspeed":0,
+          "stretch":false
+        }
+      ],
+      "views": [
+        
+      ]
+    }
+    
+  },
+  "compiler": "",
+  "settings": {
+
+  }
+}

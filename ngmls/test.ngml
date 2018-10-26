@@ -1,0 +1,25 @@
+global money: Parent = 3;
+
+class persistent Test1: Test0 {
+  var sqrt2 : number = sqrt(2);
+
+  Test1(a: Test2, c)  {
+    var a = 4;
+  }
+
+  method stinken(intensity: AAA): test4 {
+    sqrt2 += intensity;
+  }
+
+  event step {
+    sqrt2 -= hspeed;
+  }
+}
+
+function dingsBums(dings, bums: AAAAAA): BBBBB {
+  return (dings * bums);
+}
+
+function main () {
+  room_speed = 60;
+}

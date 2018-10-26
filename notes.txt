@@ -1,16 +1,22 @@
 //Draft for the project. Created in a Live-Share session.
 
 Checklist:
-ngml => json
+ngml => parsed stuff (NGMLParser)
 + Classes
 + Attributes
 + Events
 + Constructor
 + Methods
-* Globals ???? 
++ Globals
 + Functions
-json => gml
-gml => gmx
+parsed stuff => gml (NGMLProcessor)
+* Methodenaufrufe -> execute_scripts
+* Constructor + create event + attributes + method references -> create event
+* Instantiating ( new XYZ() )
+* #defines like A.destroy() => instance_destroy(A); super() => event_inherited()
+* functions -> scripts
+* number literals
+gml => gmx (NGMLBuilder)
 
 a = {
   type: "class",
@@ -104,9 +110,26 @@ class A {
   }
 }
 
+
+
+
+
+
+
+
+
+
 class_A_addieren();
 
+A.class = "Hund";
+__method_bellen = scr_Wauwau_bellen;
 
+A = new Hund();
+B = new Wauwau();
+
+A.bellen(); => execute_script(A.__method_bellen, A);
+
+A.belllllllen();  => execute_script(A.__scr_Hund_bellllllen, A);
 
 // ==>
 
