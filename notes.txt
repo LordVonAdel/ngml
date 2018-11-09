@@ -111,10 +111,27 @@ class A {
 }
 
 
+var a, b, c;
+var a = 4;
+a = 5;
+a += 4;
+a--;
+--a;
+b = 4;
+a mod b;
+a div b;
+map[? "gui"] = "hello";
 
+b[3] = 34;
+hello(2, "av");
+var haus = new Building(4 % 1);
+haus.brennen(parameter);
 
+var bbb = "hi";
+var ccc = 'hi';
 
-
+callTofunction();
+callTofunction(parameter);
 
 
 

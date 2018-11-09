@@ -1,7 +1,16 @@
 global money2 = 3;
 
+function blablub() {
+
+  new Test1(111).test(22);
+}
+
 class persistent Test1 {
 
 
 
+}
+
+class Baumhaus {
+  
 }

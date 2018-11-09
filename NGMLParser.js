@@ -9,9 +9,18 @@ const numberChars = "0123456789";
 const hexChars = "0123456789abcdefABCDEF";
 const binaryChars = "01";
 const ignoreChars = " \n\t\r";
-const operators = ":+-*{}()[],./\\;=#?|<>^$";
+const operators = ":+-*{}()[],./\\;=#?|<>^$~";
 const allowedNameStart = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
 const events = require("./events.json");
+
+
+const combinableOperators = [ "++", "--", //Increment / Decrement
+                              "+=", "-=", "*=", "/=", "%=", //Arithmetical
+                              "&&", "||", "^^", //Combining
+                              "==", "<=", ">=", "!=", //Comparing
+                              "[?", "[|", "[#", "[@", //Accessors
+                              "<<", ">>", "|=", "~=", "^=", "!=", "&=" //Bitwise
+                            ];
 
 const allowedCharsInSymbol = allowedNameStart + ignoreChars + operators + numberChars + "\"'";
 
@@ -158,6 +167,22 @@ function megaSuperDuperMasterSplit(text) {
   output.push(word);
   lines.push(line);
 
+  var onow;
+  var olast = output[0];
+
+  for (var i = 1; i < output.length; i++) {
+    onow = output[i];
+
+    if (combinableOperators.includes(onow + olast)) {
+      output.splice(i, 1);
+      lines.splice(i, 1);
+      i--;
+      output[i] = onow + olast;
+    }
+
+    olast = onow;
+  }
+
   var outnew = [];
   var linew = [];
 
@@ -280,8 +305,8 @@ class NGMLParser {
       var element = this.collection[i];
 
       if (element.type == "class") {
-        parent = element.parent;
-        parents = [element.name];
+        var parent = element.parent;
+        var parents = [element.name];
         while (parent != "") {
           for (var j = 0; j < this.collection.length; j++) {
             var checkElement = this.collection[j];

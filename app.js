@@ -1,6 +1,6 @@
-const NgmlParser = require('./NGMLParser');
-const Json2gml = require('./NGMLProcessor');
-const Gml2gmx = require('./NGMLBuilder');
+const NGMLParser = require('./NGMLParser');
+const NGMLProcessor = require('./NGMLProcessor');
+const NGMLBuilder = require('./NGMLBuilder');
 const {NGMLError, ProjectError} = require('./NGMLError');
 
 const fs = require("fs");
@@ -8,7 +8,7 @@ const path = require("path");
 
 try {
 
-  var parser = new NgmlParser();
+  var parser = new NGMLParser();
   var collection = [];
 
   function scan(directory) {
@@ -38,6 +38,12 @@ try {
     parser.read(filename);
   }
   parser.finalize();
+
+  var processor = new NGMLProcessor();
+  processor.process(parser.collection);
+
+  console.log(processor.scripts);
+  console.log("Finished processing project!");
 } catch (e) {
   if (e instanceof NGMLError) {
     console.error(e.toString());

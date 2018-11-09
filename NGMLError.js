@@ -24,5 +24,19 @@ class ProjectError extends Error {
   }
 }
 
+class NGMLCodeError extends Error {
+  constructor(message, line, location = null) {
+    super(message);
+    this.msg = message;
+    this.line = line;
+    this.location = location;
+  }
+
+  toString() {
+    return "NGML Code Error: " + this.msg + " in line " + this.lne + this.location ? " at " + this.location : "";
+  }
+}
+
 module.exports.NGMLError = NGMLError;
 module.exports.ProjectError = ProjectError;
+module.exports.NGMLCodeError = NGMLCodeError;
