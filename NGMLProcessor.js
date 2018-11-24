@@ -42,12 +42,16 @@ class NGMLProcessor {
   }
 
   processClass(data) {
-
+    //console.log("Data is ", data);
   }
 
   processFunction(data) {
     var name = data.name;
     var code = this.code(data.code, data.codeline);
+    
+    for (var i = 0; i < data.arguments.length; i++) {
+      code = "var " + data.arguments[i].argumentname + " = " + "argument[" + i + "]; " + code
+    }
 
     this.scripts.push({
       name, code
@@ -104,12 +108,15 @@ class NGMLProcessor {
     function processPeriod() {
       if (index == 1) throw new NGMLCodeError("Code cant start with . operator", codeline[index]);
       var sender = code[index - 1]; //ToDo: Bug: Takes last symbol and not expression!(dont know how to fix)
+
       var name = next();
 
       newcode = newcode.substr(0, newcode.length - 2 - sender.length);
 
       var operatorAfterTheWordThere = next();
-      if (operatorAfterTheWordThere == "(") {
+      if (operatorAfterTheWordThere == "(") { // function
+
+        if(sender == ")") throw new NGMLCodeError(`Method on return of other method is not allowed yet. Method: "${name}"`, codeline[index]);
         // var aaa = new OB();
         // kuchen = aaa.hi(1, 2, 3); => script_execute(aaa.__donotoverride_method_hi, aaa, 1, 2, 3)
         // blablabla aaa sdf

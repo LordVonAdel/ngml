@@ -1,7 +1,7 @@
 const NGMLParser = require('./NGMLParser');
 const NGMLProcessor = require('./NGMLProcessor');
 const NGMLBuilder = require('./NGMLBuilder');
-const {NGMLError, ProjectError} = require('./NGMLError');
+const {NGMLError, ProjectError, NGMLCodeError} = require('./NGMLError');
 
 const fs = require("fs");
 const path = require("path");
@@ -42,12 +42,13 @@ try {
   var processor = new NGMLProcessor();
   processor.process(parser.collection);
 
-  console.log(processor.scripts);
   console.log("Finished processing project!");
 } catch (e) {
   if (e instanceof NGMLError) {
     console.error(e.toString());
   } else if (e instanceof ProjectError) {
+    console.error(e.toString());
+  } else if (e instanceof NGMLCodeError) {
     console.error(e.toString());
   } else {
     throw e;

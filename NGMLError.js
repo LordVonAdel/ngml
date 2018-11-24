@@ -33,7 +33,7 @@ class NGMLCodeError extends Error {
   }
 
   toString() {
-    return "NGML Code Error: " + this.msg + " in line " + this.lne + this.location ? " at " + this.location : "";
+    return "NGML Code Error: " + this.msg + " in line " + this.line + ((this.location != null) ? (" at " + this.location) : "");
   }
 }
 

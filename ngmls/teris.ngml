@@ -1,8 +1,10 @@
-global money2 = 3;
+global money2 = 5;
 
-function blablub() {
+function blablub(auto, baumhaus) {
+  var y = auto.func(3).q;
 
-  new Test1(111).test(22);
+  var x = new Tetrs(111);
+  x.test(22);
 }
 
 class persistent Test1 {
@@ -13,4 +15,8 @@ class persistent Test1 {
 
 class Baumhaus {
   
+}
+
+class Tetrs {
+
 }
